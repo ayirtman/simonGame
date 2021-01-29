@@ -61,21 +61,26 @@ function checkAnswer(currentLevel) {
 }
 function nextSequence(){
 
-  var userClickedPattern = [];
+  userClickedPattern = [];
   level++;
   var randomNumber = Math.floor(Math.random() * 4);
   var randomChosenColor = buttonColors[randomNumber];
-
   $("."+ randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
-
   gamePattern.push(randomChosenColor);
-
   playSound(randomChosenColor);
-
-
   $("#level-title").html("Level " + level);
 };
 
+// function nextSequence() {
+//   userClickedPattern = [];
+//   level++;
+//   $("#level-title").text("Level " + level);
+//   var randomNumber = Math.floor(Math.random() * 4);
+//   var randomChosenColour = buttonColours[randomNumber];
+//   gamePattern.push(randomChosenColour);
+//   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+//   playSound(randomChosenColour);
+// }
 
 function playSound(name){
   var audio = new Audio("./sounds/" + name + ".mp3");
